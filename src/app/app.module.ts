@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearcFormComponent } from './searc-form/searc-form.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearcFormComponent
+    SearcFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
