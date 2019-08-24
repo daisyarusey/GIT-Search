@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GitHttpServiceService} from '../services/git-http-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public gitHttpService:GitHttpServiceService) { }
+
 
   ngOnInit() {
   }
 
   searchUser(searchTerm){
-    console.log(searchTerm);
+    this.gitHttpService.searchUsers(searchTerm)
   }
 
 }
