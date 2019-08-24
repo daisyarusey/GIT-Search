@@ -7,6 +7,7 @@ import { Component, OnInit,EventEmitter } from '@angular/core';
 })
 export class SearcFormComponent implements OnInit {
 
+  searchTerm:string;
   constructor() { }
 
   ngOnInit() {
