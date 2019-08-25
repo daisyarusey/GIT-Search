@@ -4,7 +4,46 @@
   <p>An application that allows you to search for github users and repositories</p>
 </div>
 <div class="container-fluid">
-    <app-searc-form (emitSearch)="searchUser($event)"></app-searc-form>
+  <app-searc-form (emitSearch)="searchUser($event)"></app-searc-form>
 </div>
+<div *ngFor="let user of user">
+  <div class="card">
+    <div class="card-body">
+      <div class="container contents">
+        <div class="avatar ab">
+          <img src='{{user.avatar_url}}' alt="avatar" class=" img-responsive" height="200px">
+        </div>
+        <div class="mt-4">
+          <p>
+            <span class="btn btn-danger red">followers {{user.followers}}</span>
+            <span class="btn btn-primary blue">Following {{user.following}}</span>
+            <span class="btn btn-info blue">{{user.public_repos}} Public Repos</span>
+          </p>
 
+          <div>
+            <p><a href="{{user.html_url}}" class="btn btn-success btn sm green" target="_blank">View profile on
+                github</a></p>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+  <div class="box">
+      <div class="">
+        <h3>REPOSITORIES</h3>
+      </div>
+
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="card" *ngFor="let repo of repos">
+          <p class="clearfix">
+            {{repo.name| uppercase}} <br>
+
+          </p>
+          <p>{{repo.description}}</p>
+         <button class="btn"> <a href="{{repo.html_url}}" target="_blank">View project on github</a></button>
+        </div>
+      </div>
