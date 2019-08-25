@@ -30,8 +30,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.searchUser("daisyarusey");
-    let particlessJS;
-    particlessJS.load('particles-js','particles.json',null);
+    let particlesJS;
+    particlesJS.load('particles-js','particles.json',null);
   }
 
 
