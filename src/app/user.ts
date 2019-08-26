@@ -9,6 +9,7 @@ export class User {
     public following: any,
     public created_at: Date,
     public public_repos: number,
+    public html_url: any,
   ){}
     
    
