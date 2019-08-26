@@ -3,51 +3,52 @@
   <hr>
   <p>An application that allows you to search for github users and repositories</p>
 </div>
-<div class="container-fluid">
+<div class="container-fluid ">
   <app-searc-form (emitSearch)="searchUser($event)"></app-searc-form>
-</div>
-<div>
-  <div class="card">
-    <div class="card-body">
-      <div class="container contents">
-        <div class="avatar ab">
-          
-          <img src='{{user.avatar_url}}' alt="avatar" class=" img-responsive" height="200px">
-        </div>
-        <div class="mt-4" id="desc">
-          <p>{{user.login}}</p>
-          <p>
-            <span class="btn btn-danger red mr-4">followers {{user.followers}}</span>
-            <span class="btn btn-primary blue mr-4">Following {{user.following}}</span>
-            <span class="btn btn-info blue">{{user.public_repos}} Public Repos</span>
-          </p>
-          <p> Created {{user.created_at|date}}</p>
 
-          <div>
-            <p><a href="{{user.html_url}}" class="btn btn-success btn sm green" target="_blank">View profile on
-                github</a></p>
+<div>
+  
+        <div class="card">
+          
+          <img src='{{user.avatar_url}}' alt="avatar" class=" img-card-top" height="200px">
+          <div class="card-body text-center">
+          <h4 class="card-title">{{user.login}}</h4>
+          
+            <p>Followers: {{user.followers}}</p>
+            <p>Following: {{user.following}}</p>
+            <p>Public Repos: {{user.public_repos}} <p>
+          
+          <p> Created {{user.created_at|date}}</p>
+        </div>
+
+          <div class="text-center mb-3">
+            <a href="{{user.html_url}}" class="btn btn-success btn sm green" target="_blank">View profile on
+                github</a>
           </div>
 
         </div>
       </div>
+   
+  
+
+<div class="repo mt-4">
+  <h2 class="text-center"> REPOSITORIES</h2>
+  <div class="d-flex justify-content-center mb-3" *ngFor="let repo  of repo">
+    <div class="card " style="width: 18rem;">
+        <p class="card-header">
+            {{repo.name| uppercase}} <br>
+          </p>
+      <div class="card-body">
+      
+      <p class="card-text">{{repo.description}}</p>
+      <a class="btn btn-success" href="{{repo.html_url}}" target="_blank">View project on github</a>
     </div>
   </div>
-  <div>
-
-
-  <p class="text-center"> REPOSITORIES</p>
-  <div class="d-flex justify-content-center flex-wrap" *ngFor="let repo  of repo">
-    <div class="card">
-      <p>
-        {{repo.name| uppercase}} <br>
-      </p>
-      <p>{{repo.description}}</p>
-     <button class="btn"> <a href="{{repo.html_url}}" target="_blank">View project on github</a></button>
-    </div>
   </div>
 </div>
+</div>
   
-  </div>
+  
   
   
 
