@@ -1,9 +1,5 @@
-img{
-  margin-left: 30%;
-}
-#desc{
-  margin-left: 20%;
-}
-.btn-success{
-  margin-left: 15%;
+.container-fluid{
+ background-image: url('../../assets/bg.png');
+ background-repeat: no-repeat;
+ background-size: cover;
 }
