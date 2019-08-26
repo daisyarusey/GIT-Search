@@ -29,9 +29,6 @@ export class HomeComponent implements OnInit {
         console.log(error)
       }
     )
-  }
-
-  getRepos(searchTerm){
     this.gitHttpService.getRepos(searchTerm).then(
       (success)=>{
         this.repo=this.gitHttpService.repo;
@@ -41,6 +38,7 @@ export class HomeComponent implements OnInit {
         console.log(error)
       }
     )
+
   }
 
   ngOnInit() {

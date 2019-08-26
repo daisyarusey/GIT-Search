@@ -11,9 +11,11 @@
     <div class="card-body">
       <div class="container contents">
         <div class="avatar ab">
+          
           <img src='{{user.avatar_url}}' alt="avatar" class=" img-responsive" height="200px">
         </div>
         <div class="mt-4" id="desc">
+          <p>{{user.login}}</p>
           <p>
             <span class="btn btn-danger red mr-4">followers {{user.followers}}</span>
             <span class="btn btn-primary blue mr-4">Following {{user.following}}</span>
@@ -30,17 +32,20 @@
       </div>
     </div>
   </div>
+  <div>
+
+
   <p class="text-center"> REPOSITORIES</p>
-  <div class="d-flex justify-content-center flex-wrap">
+  <div class="d-flex justify-content-center flex-wrap" *ngFor="let repo  of repo">
     <div class="card">
       <p>
         {{repo.name| uppercase}} <br>
-
       </p>
       <p>{{repo.description}}</p>
      <button class="btn"> <a href="{{repo.html_url}}" target="_blank">View project on github</a></button>
     </div>
   </div>
+</div>
   
   </div>
   
