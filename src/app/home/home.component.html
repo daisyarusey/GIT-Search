@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <app-searc-form (emitSearch)="searchUser($event)"></app-searc-form>
 </div>
-<div *ngFor="let user of user">
+<div>
   <div class="card">
     <div class="card-body">
       <div class="container contents">
@@ -19,6 +19,7 @@
             <span class="btn btn-primary blue mr-4">Following {{user.following}}</span>
             <span class="btn btn-info blue">{{user.public_repos}} Public Repos</span>
           </p>
+          <p> Created {{user.created_at|date}}</p>
 
           <div>
             <p><a href="{{user.html_url}}" class="btn btn-success btn sm green" target="_blank">View profile on
@@ -29,11 +30,20 @@
       </div>
     </div>
   </div>
+  <p class="text-center"> REPOSITORIES</p>
+  <div class="d-flex justify-content-center flex-wrap">
+    <div class="card">
+      <p>
+        {{repo.name| uppercase}} <br>
+
+      </p>
+      <p>{{repo.description}}</p>
+     <button class="btn"> <a href="{{repo.html_url}}" target="_blank">View project on github</a></button>
+    </div>
+  </div>
   
   </div>
-  <div class="container-fluid">
-    <app-repository></app-repository>
-  </div>
+  
   
 
   

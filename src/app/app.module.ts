@@ -9,7 +9,8 @@ import { SearcFormComponent } from './searc-form/searc-form.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { RepositoryComponent } from './repository/repository.component';
+import { DateCountPipe } from './date-count.pipe';
+
 
 
 
@@ -20,7 +21,7 @@ import { RepositoryComponent } from './repository/repository.component';
     HomeComponent,
     NavbarComponent,
     NotFoundComponent,
-    RepositoryComponent
+    DateCountPipe,
   ],
   imports: [
     BrowserModule,

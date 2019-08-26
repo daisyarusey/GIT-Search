@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {GitHttpServiceService} from '../services/git-http-service.service';
 import {User} from '../user';
+import {Repository} from '../repository';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -9,7 +11,8 @@ import {User} from '../user';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  user:User[];
+  user:User;
+  repo:Repository;
   particlesJS:any;
 
   constructor(public gitHttpService:GitHttpServiceService) { }
@@ -28,10 +31,21 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  getRepos(searchTerm){
+    this.gitHttpService.getRepos(searchTerm).then(
+      (success)=>{
+        this.repo=this.gitHttpService.repo;
+        console.log(this.repo);
+      },
+      (error)=>{
+        console.log(error)
+      }
+    )
+  }
+
   ngOnInit() {
     this.searchUser("daisyarusey");
-    let particlesJS;
-    particlesJS.load('particles-js','particles.json',null);
+    
   }
 
 

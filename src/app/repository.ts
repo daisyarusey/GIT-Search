@@ -1,10 +1,7 @@
 export class Repository {
-  description: any;
-  name: any;
-  owner: any;
-  watchers: any;
-  forks: any;
-  // tslint:disable-next-line:variable-name
-  default_branch: any;
-  language: any;
+  constructor(
+    public name: string,
+    public html_url: string,
+    public description: string,
+  ){}
 }
